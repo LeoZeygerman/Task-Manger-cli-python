@@ -1,4 +1,4 @@
-from task_logic import add_task
+from task_logic import add_task, show_all
 def main_menu():
     while True:
         try:
@@ -15,6 +15,8 @@ def main_menu():
             
             if choice == 1:
                 add_task()
-            
+                
+            if choice == 2:
+                show_all()
         except ValueError:
             print('Ошибка при вводе!')

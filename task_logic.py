@@ -20,10 +20,14 @@ def add_task():
         }
         data.append(task)
         save_data(data)
-        for item in data:
-            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
-            task_object.get_info()
+        task_object = Task(task['name'], task['description'], task['priority'], task['deadline'])
+        task_object.get_info()
             
     except ValueError:
         print('Ошибка при вводе!')
-    
+        
+def show_all():
+    data = load_data()
+    for item in data:
+        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+        task_object.get_info()

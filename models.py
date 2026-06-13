@@ -7,8 +7,8 @@ class Task:
         
     def get_info(self):
         if self.priority == 1:
-            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Очень важная\nДедлайн: {self.deadline}')
+            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Очень важная\nДедлайн: {self.deadline}\n=====')
         if self.priority == 2:
-            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Средняя важность\nДедлайн: {self.deadline}')
+            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Средняя важность\nДедлайн: {self.deadline}\n=====')
         if self.priority == 3:
-            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nДедлайн: {self.deadline}')
+            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nДедлайн: {self.deadline}\n=====')
