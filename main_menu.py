@@ -1,3 +1,4 @@
+from task_logic import add_task
 def main_menu():
     while True:
         try:
@@ -13,7 +14,7 @@ def main_menu():
             choice = int(input('Ваш выбор: '))
             
             if choice == 1:
-                pass
+                add_task()
             
         except ValueError:
             print('Ошибка при вводе!')
