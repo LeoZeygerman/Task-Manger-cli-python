@@ -1,4 +1,5 @@
 from storage import save_data, load_data
+from models import Task
 
 def add_task():
     try:
@@ -19,7 +20,9 @@ def add_task():
         }
         data.append(task)
         save_data(data)
-            
+        for item in data:
+            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+            task_object.get_info()
             
     except ValueError:
         print('Ошибка при вводе!')
