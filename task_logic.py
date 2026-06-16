@@ -16,11 +16,12 @@ def add_task():
             'name': name,
             'description': description,
             'priority': priority,
-            'deadline': deadline
+            'deadline': deadline,
+            'status': 'Не завершено'
         }
         data.append(task)
         save_data(data)
-        task_object = Task(task['name'], task['description'], task['priority'], task['deadline'])
+        task_object = Task(task['name'], task['description'], task['priority'], task['deadline'], task['status'])
         task_object.get_info()
             
     except ValueError:
@@ -29,7 +30,7 @@ def add_task():
 def show_all():
     data = load_data()
     for item in data:
-        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
         task_object.get_info()
         
 def find_taks():
@@ -38,7 +39,7 @@ def find_taks():
     for item in data:
         word = item['name']
         if find.lower() == word.lower():
-            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
             task_object.one_info()
 
 def edit():
@@ -60,7 +61,7 @@ def edit():
                         new_name = input('Введите новое название задачи: ')
                         item['name'] = new_name
                         save_data(data)
-                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
                         task_object.one_info()
                         
             elif choice == 2:
@@ -70,7 +71,7 @@ def edit():
                         new_description = input('Введите новое описание задачи: ')
                         item['description'] = new_description
                         save_data(data)
-                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
                         task_object.one_info()
             
             elif choice == 3:
@@ -83,7 +84,7 @@ def edit():
                         priority = int(input('Введите номер важности задачи: '))
                         item['priority'] = priority
                         save_data(data)
-                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
                         task_object.one_info()
                         
             elif choice == 4:
@@ -92,7 +93,7 @@ def edit():
                     if find.lower() == word.lower():
                         deadline = input('Введите новый дедлайн: (ГГГГ-ММ-ДД): ')
                         save_data(data)
-                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
                         task_object.one_info()
             
             elif choice == 5:

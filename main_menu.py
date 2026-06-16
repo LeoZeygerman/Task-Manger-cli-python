@@ -7,9 +7,10 @@ def main_menu():
             print('2.Показать все задачи')
             print('3.Найти задачу')
             print('4.Изменить задачу')
-            print('5.Удалить задачу')
-            print('6.Статистика')
-            print('7.Выход')
+            print('5.Отметить выполнение задачи')
+            print('6.Удалить задачу')
+            print('7.Статистика')
+            print('8.Выход')
             choice = int(input('Ваш выбор: '))
             
             if choice == 1:
@@ -25,6 +26,9 @@ def main_menu():
                 edit()
                 
             elif choice == 5:
+                pass
+                
+            elif choice == 6:
                 delete_task()
         except ValueError:
             print('Ошибка при вводе!')

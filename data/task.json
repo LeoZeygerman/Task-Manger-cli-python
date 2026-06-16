@@ -1,1 +1,9 @@
-[{"name": "Leva", "description": "Krasava", "priority": 1, "deadline": "2026-06-20"}, {"name": "Levchik", "description": "top", "priority": 1, "deadline": "2026-02-30"}]
+[
+    {
+        "name": "homework",
+        "description": "do homework",
+        "priority": 2,
+        "deadline": "2026-06-20",
+        "status": "Не завершено"
+    }
+]
