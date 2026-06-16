@@ -1,4 +1,4 @@
-from task_logic import add_task, show_all, find_taks
+from task_logic import add_task, show_all, find_taks, edit
 def main_menu():
     while True:
         try:
@@ -7,19 +7,24 @@ def main_menu():
             print('2.Показать все задачи')
             print('3.Найти задачу')
             print('4.Изменить задачу')
-            print('5.Завершить задачу')
-            print('6.Удалить задачу')
-            print('7.Статистика')
-            print('8.Выход')
+            print('5.Удалить задачу')
+            print('6.Статистика')
+            print('7.Выход')
             choice = int(input('Ваш выбор: '))
             
             if choice == 1:
                 add_task()
                 
-            if choice == 2:
+            elif choice == 2:
                 show_all()
             
-            if choice == 3:
+            elif choice == 3:
                 find_taks()
+                
+            elif choice == 4:
+                edit()
+                
+            elif choice == 5:
+                pass
         except ValueError:
             print('Ошибка при вводе!')

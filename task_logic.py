@@ -40,3 +40,64 @@ def find_taks():
         if find.lower() == word.lower():
             task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
             task_object.one_info()
+
+def edit():
+    try:
+        while True:
+            find = input('Введите название задачи, которую хотите изменить: ')
+            data = load_data()
+            print('1.Изменить название задачи')
+            print('2.Изменить описание задачи')
+            print('3.Изменить важность задачи')
+            print('4.Изменить дедлайн')
+            print('5.Вернуться')
+            choice = int(input('Введите номер: '))
+            
+            if choice == 1:
+                for item in data:
+                    word = item['name']
+                    if find.lower() == word.lower():
+                        new_name = input('Введите новое название задачи: ')
+                        item['name'] = new_name
+                        save_data(data)
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object.one_info()
+                        
+            elif choice == 2:
+                for item in data:
+                    word = item['name']
+                    if find.lower() == word.lower():
+                        new_description = input('Введите новое описание задачи: ')
+                        item['description'] = new_description
+                        save_data(data)
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object.one_info()
+            
+            elif choice == 3:
+                for item in data:
+                    word = item['name']
+                    if find.lower() == word.lower():
+                        print('1.Важна задача')
+                        print('2.Задача средней важности')
+                        print('3.Обычная задача')
+                        priority = int(input('Введите номер важности задачи: '))
+                        item['priority'] = priority
+                        save_data(data)
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object.one_info()
+                        
+            elif choice == 4:
+                for item in data:
+                    word = item['name']
+                    if find.lower() == word.lower():
+                        deadline = input('Введите новый дедлайн: (ГГГГ-ММ-ДД): ')
+                        save_data(data)
+                        task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+                        task_object.one_info()
+            
+            elif choice == 5:
+                break                               
+        
+    except ValueError:
+        print('Ошибка при вводе!')
+        return
