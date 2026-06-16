@@ -1,3 +1,4 @@
+from datetime import date, datetime
 class Task:
     def __init__(self, name, description, priority, deadline):
         self.name = name
@@ -12,3 +13,12 @@ class Task:
             print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Средняя важность\nДедлайн: {self.deadline}\n=====')
         if self.priority == 3:
             print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nДедлайн: {self.deadline}\n=====')
+            
+    def one_info(self):
+        today = date.today()
+        deadline = datetime.strptime(self.deadline, '%Y-%m-%d').date()
+        if deadline > today:
+            left = (deadline - today).days
+            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nСколько осталось до сдачи: {left}\n=====')
+        elif deadline < today:
+            print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nДедлайн уже прошел!\n=====')

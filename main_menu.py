@@ -1,4 +1,4 @@
-from task_logic import add_task, show_all
+from task_logic import add_task, show_all, find_taks
 def main_menu():
     while True:
         try:
@@ -18,5 +18,8 @@ def main_menu():
                 
             if choice == 2:
                 show_all()
+            
+            if choice == 3:
+                find_taks()
         except ValueError:
             print('Ошибка при вводе!')

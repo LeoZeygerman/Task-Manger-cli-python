@@ -31,3 +31,12 @@ def show_all():
     for item in data:
         task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
         task_object.get_info()
+        
+def find_taks():
+    data = load_data()
+    find = input('Введите название задачи, которую хотите найти: ')
+    for item in data:
+        word = item['name']
+        if find.lower() == word.lower():
+            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'])
+            task_object.one_info()
