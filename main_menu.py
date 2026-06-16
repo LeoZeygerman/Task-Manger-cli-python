@@ -1,4 +1,4 @@
-from task_logic import add_task, show_all, find_taks, edit
+from task_logic import add_task, show_all, find_taks, edit, delete_task
 def main_menu():
     while True:
         try:
@@ -25,6 +25,6 @@ def main_menu():
                 edit()
                 
             elif choice == 5:
-                pass
+                delete_task()
         except ValueError:
             print('Ошибка при вводе!')

@@ -101,3 +101,14 @@ def edit():
     except ValueError:
         print('Ошибка при вводе!')
         return
+    
+def delete_task():
+    data = load_data()
+    choice = input('Введите название задачи, которую хотите удалить: ')
+    for item in data:
+        word = item['name']
+        if choice.lower() == word.lower():
+            data.remove(item)
+            save_data(data)
+            print('Задача успешно удалена!')
+        
