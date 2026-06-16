@@ -23,3 +23,5 @@ class Task:
             print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nСколько осталось до сдачи: {left}\nСтатус: {self.status}\n=====')
         elif deadline < today:
             print(f'Задача: {self.name}\nОписание {self.description}\nВажность: Обычная\nДедлайн уже прошел!\nСтатус: {self.status}\n=====')
+            
+        

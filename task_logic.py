@@ -113,3 +113,13 @@ def delete_task():
             save_data(data)
             print('Задача успешно удалена!')
         
+def complete():
+    data = load_data()
+    choice = input('Введите название задачи, которую хотите отметить: ')
+    for item in data:
+        word = item['name']
+        if choice.lower() == word.lower():
+            item['status'] = 'Завершено'
+            save_data(data)
+            task_object = Task(item['name'], item['description'], item['priority'], item['deadline'], item['status'])
+            task_object.one_info()
